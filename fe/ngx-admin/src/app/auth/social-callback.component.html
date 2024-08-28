@@ -1,0 +1,29 @@
+<ng-container *ngIf="show">
+    <nb-card *ngIf="!loginSuccess">
+        <nb-card-header>
+            <div style="text-align: center;">
+                <div style="padding-bottom: 50px; padding-top: 50px;">
+                    <img src="assets/images/oneblock-logo-black.png" width="500vw">
+                </div>
+                <h3>Đăng nhập không thành công</h3>
+            </div>
+
+        </nb-card-header>
+        <nb-card-body>
+            Tài khoản bạn vừa đăng nhập không hợp lệ. Vui lòng liên hệ xxx&#64;gmail.com để được hướng dẫn đăng nhập.
+        </nb-card-body>
+        <nb-card-footer>Trân trọng.</nb-card-footer>
+    </nb-card>
+
+    <nb-card *ngIf="loginSuccess">
+        <nb-card-header>
+            <div style="text-align: center;">
+                <div style="padding-bottom: 50px; padding-top: 50px;">
+                    <img src="assets/images/oneblock-logo-black.png" width="500vw">
+                </div>
+                <h3>Đăng nhập thành công</h3>
+            </div>
+        </nb-card-header>
+        <nb-card-footer>Trân trọng.</nb-card-footer>
+    </nb-card>
+</ng-container>
