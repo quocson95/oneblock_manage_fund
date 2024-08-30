@@ -27,6 +27,7 @@ func init() {
 func main() {
 	// load config
 	{
+		zap.L().Info("read config")
 		configFile := "config.yaml"
 		f, err := os.Open(configFile)
 		if err != nil {
@@ -39,6 +40,7 @@ func main() {
 	// init db
 	{
 		dsn := config.Get().DB.DSN
+		zap.L().With(zap.String("dsn", dsn)).Info("connect db")
 		err := models.DefaulDB.Init(dsn, &models.User{})
 		if err != nil {
 			panic(err)
@@ -60,7 +62,7 @@ func main() {
 			MaxAge: 12 * time.Hour,
 		}))
 	}
-	r.GET("/ping", func(c *gin.Context) {
+	r.GET("/api/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message": "pong",
 		})
@@ -78,6 +80,10 @@ func main() {
 func createDefaultUser() {
 	emails := []string{
 		"dangquocson1995@gmail.com",
+		"nghuuloc512@gmail.com",
+		"nguyentrungbmt17@gmail.com",
+		"haotran1689@gmail.com",
+		"dtoan.bui@gmail.com",
 	}
 	for _, email := range emails {
 		u := models.User{

@@ -1,14 +1,37 @@
 version: '3.8'
-
 services:
+  postgres:
+    command: postgres -c shared_preload_libraries=pg_stat_statements -c pg_stat_statements.track=all
+    container_name: backend_lobby_postgres
+    environment:
+      - POSTGRES_DB=oneblock
+      - POSTGRES_PASSWORD=localdb
+    expose:
+      - "8080"
+      - "5432"
+    image: postgres:14.4-alpine
+    ports:
+      - "5432:5432"
+      - "9090:8080"
+    volumes:
+      - data14:/var/lib/postgresql/data
+
   backend:
+    container_name: oneblock_fund_be
     build:
       context: ./be
     ports:
-      - "6060:8080"
+      - "6060:6060"
+    depends_on:
+      - postgres
 
   frontend:
+    container_name: oneblock_fund_fe
     build:
-      context: ./fe/ngx-admin
+      context: ./frontend
     ports:
       - "6062:80"
+    depends_on:
+      - backend
+volumes:
+  data14:
