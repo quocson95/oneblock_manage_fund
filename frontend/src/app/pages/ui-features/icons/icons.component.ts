@@ -18,6 +18,8 @@ export class IconsComponent {
     iconsLibrary.registerFontPack('fa', { packClass: 'fa', iconClassPrefix: 'fa' });
     iconsLibrary.registerFontPack('far', { packClass: 'far', iconClassPrefix: 'fa' });
     iconsLibrary.registerFontPack('ion', { iconClassPrefix: 'ion' });
+
+    console.log(iconsLibrary.getPack('eva').icons.keys())
   }
 
   icons = {
@@ -47,7 +49,7 @@ export class IconsComponent {
       'briefcase', 'bug', 'building', 'bullhorn',
     ],
 
-    fontAwesomeRegular: [ 'chart-bar', 'bell', 'bell-slash', 'bookmark', 'building' ],
+    fontAwesomeRegular: ['chart-bar', 'bell', 'bell-slash', 'bookmark', 'building'],
   };
 
 }
