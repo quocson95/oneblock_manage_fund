@@ -24,14 +24,15 @@ const routes: Routes = [{
             component: EChartComponent,
         },
         {
-            path: '**',
-            component: NotFoundComponent,
-        },
-        {
             path: '',
             redirectTo: 'dashboard',
             pathMatch: 'full',
         },
+        {
+            path: '**',
+            component: NotFoundComponent,
+        },
+
     ]
 }];
 
