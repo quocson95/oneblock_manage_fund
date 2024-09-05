@@ -6,7 +6,7 @@ import { PagesComponent } from './pages.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ECommerceModule } from './e-commerce/e-commerce.module';
 import { PagesRoutingModule } from './pages-routing.module';
-import { MiscellaneousModule } from './miscellaneous/miscellaneous.module';
+import { MiscellaneousModule } from '../fund/miscellaneous/miscellaneous.module';
 
 @NgModule({
   imports: [

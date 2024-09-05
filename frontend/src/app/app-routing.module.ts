@@ -18,6 +18,12 @@ export const routes: Routes = [
       .then(m => m.PagesModule),
   },
   {
+    path: 'fund',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./fund/fund.modules')
+      .then(m => m.FundModule),
+  },
+  {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module')
       .then(m => m.AuthModule),
@@ -53,8 +59,8 @@ export const routes: Routes = [
       },
     ],
   },
-  { path: '', redirectTo: 'pages', pathMatch: 'full' },
-  { path: '**', redirectTo: 'pages' },
+  { path: '', redirectTo: 'fund', pathMatch: 'full' },
+  { path: '**', redirectTo: 'fund' },
 ];
 
 const config: ExtraOptions = {

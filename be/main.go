@@ -72,8 +72,9 @@ func main() {
 	oauthController.Init(config.Get().Google.ID, config.Get().Google.Secret, config.Get().Google.CallbackSSO)
 	oauthController.Router(r.Group("/api/auth"))
 	new(controllers.LoginController).Router(r.Group("/auth"))
+	new(controllers.BinanceController).Router(r.Group("/binance"))
 	// add defaul user
-	go createDefaultUser()
+	// go createDefaultUser()
 	r.Run(fmt.Sprintf(":%d", config.Get().Be.Port)) // listen and serve on 0.0.0.0:8080
 }
 
