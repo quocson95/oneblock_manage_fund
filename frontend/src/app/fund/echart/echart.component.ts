@@ -13,5 +13,8 @@ export class EChartComponent {
     { name: 'BTC Gold', url: 'https://api.oneblock.vn/be/chart/btc_gold.html' },
     { name: 'BTC Holder', url: 'https://api.oneblock.vn/be/chart/btc_holder.html' },
     { name: 'Funding Market Corelation', url: 'https://api.oneblock.vn/be/chart/funding_market_core.html' },
+    { name: 'ETH Gas & BTC', url: 'https://api.oneblock.vn/be/chart/eth_gas_btc.html' },
+    { name: 'VND.USD & BTC', url: 'https://api.oneblock.vn/be/chart/usd_vnd_btc.html' },
+
   ];
 }
